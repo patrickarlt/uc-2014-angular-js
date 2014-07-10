@@ -54,121 +54,19 @@
 				</section>
 
 				<section>
-					<h1>Or How I Learned to Stop Worrying and Love Angular JS</h1>
-				</section>
-
-				<section>
-					<h1>Angular JS is amazing!</h1>
-				</section>
-
-				<section>
-					<div class="block-group block-group-2-up">
-						<div class="block" style="text-align:center;">
-							<img src="diagram1.png" alt="">
-							<br>
-						</div>
-						<div class="block" style="text-align:center;">
-							<img src="diagram2.png" alt="">
-							<br>
-						</div>
-						<div class="block" style="text-align:center;">
-							<img src="diagram3.png" alt="">
-							<br>
-						</div>
-						<div class="block" style="text-align:center;">
-							<img src="diagram4.png" alt="">
-							<br>
-						</div>
-					</div>
-				</section>
-
-				<section class="left">
-					<div class="center-text">
-					</div>
-					<div style="vertical-align:middle;">
-						<img src="terminology.jpg" alt="" class="float:left;" width="800">
-						<ul style="float: right; margin-top: 1.5em; margin-right: 2em;">
-							<li>directives?</li>
-							<li>transclusion?</li>
-							<li>HTML compilation?</li>
-							<li>providers?</li>
-							<li>injectors?</li>
-							<li>disgest cycle?</li>
-							<li>indigestion?</li>
-						</ul>
-					</div>
-				</section>
-
-				<section>
-					<img src="junk.jpg" alt="what a peice of junk">
-				</section>
-
-				<section class="left">
-					<h1>Web Components</h1>
-					<br>
-					<h3>Extend the vocabulary of HTML</h3>
-					<br>
+					<h2>Disclaimer</h2>
 					<ul>
-						<li>Shadow DOM</li>
-						<li>HTML Templates</li>
-						<li>Custom Elements</li>
-						<li>HTML Imports</li>
+						<li>Angular can't really be covered in a half hour</li>
+						<li>I HAVE to assume you are least passingly familiar with Angular</li>
+						<li>http://bit.ly/1jgRoSi for my Dev Summit talk</li>
 					</ul>
-					<p><a href="https://www.youtube.com/watch?v=fqULJBBEVQE#t=177">https://www.youtube.com/watch?v=fqULJBBEVQE#t=177</a></p>
 				</section>
 
 				<section>
-					<pre><code class="xml">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-	&lt;head&gt;
-		&lt;title&gt;Mind Blown&lt;/title&gt;
-		&lt;link rel=&quot;import&quot; href=&quot;esri-maps.html&quot;&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-		&lt;esri-map id=&quot;map&quot;center=&quot;45.528, -122.680&quot; zoom=&quot;15&quot;&gt;
-			&lt;esri-feature-layer id=&quot;parks&quot; url=&quot;http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Parks_pdx/FeatureServer/0&quot; &lt;esri-feature-layer&gt;
-		&lt;/esri-map&gt;
-
-		&lt;script type=&quot;text/javascript&quot;&gt;
-			var map = document.getElementById("map");
-
-			map.on(&quot;click&quot;, function(e){
-				console.log(&quot;map was clicked on&quot;);
-			});
-
-			var parks = document.getElementById("parks");
-
-			parks.on(&quot;click&quot;, function(feature){
-				console.log(&quot;you clicked on &quot; + feature.name);
-			});
-		&lt;/script&gt;
-	&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-				</section>
-
-				<section class="left">
-					<h1>So This Angular JS Thing...</h1>
-					<p>Angular is the only production-ready way to do ANYTHING like Web Components</p>
-					<p class="fragment">Angular also has a TON of features for building web apps</p>
-				</section>
-
-				<section>
-					<h1>Angular JS Features</h1>
-					<br>
-					<ul class="block-group block-group-3-up">
-						<li class="block">Data Binding</li>
-						<li class="block">Controller</li>
-						<li class="block">Plain JavaScript</li>
-						<li class="block">Deep Linking</li>
-						<li class="block">Form Validation</li>
-						<li class="block">Server Communication</li>
-						<li class="block">Directives</li>
-						<li class="block">Reusable Components</li>
-						<li class="block">Localization</li>
-						<li class="block">Embeddable</li>
-						<li class="block">Injectable</li>
-						<li class="block">Testable</li>
+					<h2>Angular &amp; Me</h2>
+					<ul>
+						<li>Initially look left a sour taste in my mouth</li>
+						<li>As I stared using other frameworks like Backbone, I realized Angular was awesome</li>
 					</ul>
 				</section>
 
@@ -179,193 +77,12 @@
 				</section>
 
 				<section>
-					<h1>How Angular JS Works</h1>
-				</section>
-
-				<section class="left">
-					<header>
-						<h3>How Angular Works - App</h3>
-					</header>
-					<p>Angular has its own system for scoping and namespaceing modules.</p>
-					<pre><code class="javascript">var app = angular.module('todo', []);</code></pre>
-					<pre><code class="html">&lt;div ng-app=&quot;todo&quot;&gt;
-  ...
-&lt;/div&gt;</code></pre>
-				</section>
-
-				<section class="left">
-					<header>
-						<h3>How Angular Works - Controllers and <code>$scope</code></h3>
-					</header>
-					<p><code>$scope</code> represents our "Model" and how we interact with our data</p>
-					<p>Controllers bind our <code>$scope</code> to chunks of DOM</p>
-					<pre><code class="html">&lt;div ng-app&gt;
-	&lt;div ng-controller=&quot;MainCtrl&quot;&gt;
-		{{title}}
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-					<pre><code class="javascript">function MainCtrl($scope){
-	$scope.title = "Hello World";
-}</code></pre>
-					<a href="http://jsfiddle.net/patrickarlt/qv2v5/">http://jsfiddle.net/patrickarlt/qv2v5/</a>
-				</section>
-
-				<section class="left">
-					<header>
-						<h3>How Angular Works - Expressions</h3>
-					</header>
-					<p>Expressions are simple code peices that Angular can parse and evaluate</p>
-					<ul>
-						<li><code>{{ title }}</code> is an expression.</li>
-						<li>So is <code>{{ "Angular Says " + title }}</code></li>
-						<li>Expressions are ALWAYS evaluated against the current <code>$scope</code></li>
-					</ul>
-					<p></p>
-				</section>
-
-				<section class="left">
-					<header>
-						<h3>How Angular Works - Directives</h3>
-					</header>
-					<p>Directives tell Angular HOW to bind <code>$scope</code> to the DOM</p>
-					<pre><code class="html"><div ng-app>
-    <div ng-controller="MainCtrl">
-        <h1 ng-class="{big: isBig}">{{title}}</h1>
-    </div>
-</div></code></pre>
-<pre><code class="javascript">function MainCtrl($scope){
-    $scope.isBig = true;
-    $scope.title = "Hello World"
-}</code></pre>
-
-					<a href="http://jsfiddle.net/patrickarlt/5CRkr/1/">http://jsfiddle.net/patrickarlt/5CRkr/1/</a>
-				</section>
-
-				<section class="left">
-					<header>
-						<h3>How Angular Works - Data Binding</h3>
-					</header>
-					<p>Bind data from <code>$scope</code> to DOM and vica-versa</p>
-					<pre><code class="html"><div ng-app>
-    <div ng-controller="MainCtrl">
-        <input type="text" ng-model="title" />
-        <h1>{{title}}</h1>
-    </div>
-</div></code></pre>
-<pre><code class="javascript">function MainCtrl($scope){
-    $scope.title = "Hello World"
-}</code></pre>
-				<a href="http://jsfiddle.net/patrickarlt/w3ZU3/">http://jsfiddle.net/patrickarlt/w3ZU3/</a>
+					<h1>Demo Time!</h1>
+					<a href="http://jsfiddle.net/patrickarlt/5CRkr/1/">YATL (Yet Another ToDo List)</a>
 				</section>
 
 				<section>
-					<h1>How does Angular know the scope changed!?!?!</h1>
-				</section>
-
-				<section class="left">
-					<header>
-						<h3>How Angular Works - Dirty Checking</h3>
-					</header>
-					<p class="fragment">Angular compares the new <code>$scope</code> the old <code>$scope</code></p>
-					<p class="fragment">If <code>$scope</code> changed, directives will handle changing the DOM</p>
-					<p class="fragment"><a href="http://stackoverflow.com/questions/9682092/databinding-in-angularjs">http://stackoverflow.com/questions/9682092/databinding-in-angularjs</a></p>
-				</section>
-
-				<section>
-					<h1>How does Angular know when to do dirty checking?</h1>
-				</section>
-
-				<section class="left">
-					<header>
-						<h3>How Angular Works - Digest Loop</h3>
-					</header>
-					<p>First lets break Angular&hellip;</p>
-					<pre><code class="html">&lt;div ng-app&gt;
-  &lt;div ng-controller=&quot;MainCtrl&quot;&gt;
-    &lt;h1&gt;{{title}}&lt;/h1&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-					<pre><code class="javascript">function MainCtrl($scope){
-  $scope.title = "Hello World"
-
-  setTimeout(function(){
-    $scope.title = "Angular is Magic!";
-  }, 500);
-}</code></pre>
-					<a href="http://jsfiddle.net/patrickarlt/u5T9v/">http://jsfiddle.net/patrickarlt/u5T9v/</a>
-				</section>
-
-				<section class="left">
-					<header>
-						<h3>How Angular Works - <code>$scope.$apply</code></h3>
-					</header>
-					<p>Tells Angular you are changing the <code>$scope</code>.</p>
-					<pre><code class="html">&lt;div ng-app&gt;
-  &lt;div ng-controller=&quot;MainCtrl&quot;&gt;
-      &lt;h1&gt;{{title}}&lt;/h1&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-					<pre><code class="javascript">function MainCtrl($scope){
-  $scope.title = "Hello World"
-
-  setTimeout(function(){
-    $scope.$apply(function(){
-      $scope.title = "Angular is Magic!";
-    });
-  }, 500);
-}</code></pre>
-					<a href="http://jsfiddle.net/patrickarlt/JRvnH/">http://jsfiddle.net/patrickarlt/JRvnH/</a>
-				</section>
-
-				<section class="left">
-					<header>
-						<h3>How Angular Works - <code>$scope.$apply</code></h3>
-					</header>
-					<p>Most of the time you don't have to call <code>$scope.$apply</code>. Just use Angulars helpers.</p>
-					<pre><code class="javascript">function MainCtrl($scope, $timeout){
-    $scope.title = "Hello World"
-
-    $timeout(function(){
-        $scope.title = "Angular is Magic!";
-    }, 500);
-}</code></pre>
-					<a href="http://jsfiddle.net/patrickarlt/MzjL6/1">http://jsfiddle.net/patrickarlt/MzjL6/</a>
-				</section>
-
-				<section>
-						<h2>One last <code>$scope.$apply</code> example</h2>
-						<pre><code class="javascript">var socket = io.connect('http://api.mapattack.org:8000');
-
-socket.on('data', function(payload){
-  $scope.$apply(function(){
-		$scope.gameState = payload;
-  });
-});</code></pre>
-					<p class="fragment">Think of <code>$scope.$apply</code> as APPLYING changes to the SCOPE</p>
-				</section>
-
-				<section>
-					<h1>A Simple Angular App</h1>
-					<p><a href="http://jsfiddle.net/patrickarlt/LS2Vp/4/">http://jsfiddle.net/patrickarlt/LS2Vp/4/</a></p>
-				</section>
-
-				<section>
-					<img src="not-impressed.png" alt="Not Impressed">
-					<br>
-					<br>
-					<h2 class="fragment">I thought this was about maps...</h2>
-				</section>
-
-				<section>
-					<h1>Fine.</h1>
-					<h1>Lets Make<br><code>&lt;esri-map&gt;</code></h1>
-				</section>
-
-				<section>
-					<h1>But first we have to make Angular and Dojo play nice</h1>
-				</section>
-
-				<section class="left">
+					<h2>So Angular + JS API?</h2>
 					<div class="block-group block-group-3-up">
 						<div class="block fragment">
 							<h3>The Good</h3>
@@ -398,51 +115,14 @@ socket.on('data', function(payload){
 				</section>
 
 				<section>
-					<h1>Custom Directives</h1>
-					<p class="fragment">Warning! Writing your own directives are a HUGE topic!</p>
-					<pre class="fragment"><code class="html">&lt;div ng-controller=&quot;MapCtrl&quot;&gt;
-  &lt;esri-map id=&quot;map&quot; center=&quot;-73.97163391113281,40.70579060224226&quot; zoom=&quot;14&quot; basemap=&quot;topo&quot; onclick=&quot;click&quot;&gt;
-    &lt;esri-feature-layer url=&quot;http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/NYC_Police_Precincts/FeatureServer/0&quot;&gt;&lt;/esri-feature-layer&gt;
-    &lt;esri-feature-layer url=&quot;http://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Graffiti_Locations3/FeatureServer/0&quot;&gt;&lt;/esri-feature-layer&gt;
-  &lt;/esri-map&gt;
-&lt;/div&gt;</code></pre>
-	<p class="fragment"><a href="https://github.com/patrickarlt/uc-2014-angular-js/blob/gh-pages/examples/js-api-directives/app/directives/Map.js"><code>esri-map</code></a> | <a href="https://github.com/patrickarlt/uc-2014-angular-js/blob/gh-pages/examples/js-api-directives/app/directives/FeatureLayer.js"><code>esri-feature-layer</code></a></p>
-				</section>
-
-				<section>
-					<h1>Putting All Togather</h1>
-					<p><a href="http://patrickarlt.github.io/uc-2014-angular-js/examples/js-api-directives/">Final Demo</a></p>
-				</section>
-
-				<section class="left">
-					<div style="vertical-align:middle;">
-						<img src="i-know.jpg" alt="I Know Angular JS" width="825" style="margin: 3.5em 0 0 0;">
-						<div style="float: right; margin-right: 2em;">
-							<h3>Except For&hellip;</h3>
-							<ul>
-								<li>Testing</li>
-								<li>Animations</li>
-								<li>Routing</li>
-								<li>Services</li>
-								<li>Filters</li>
-								<li>Dependency Injection</li>
-								<li>And some other stuff...</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-				<section>
-					<h1>Want More?</h1>
-					<p>Working with JavaScript App Frameworks and ArcGIS API for JavaScript</p>
-					<p>4:00pm - 5:00pm - Today - Smoketree A-E</p>
-					<p>Backbone, Polymer, Web Components, Angular</p>
+					<h1>Demo Time!</h1>
+					<a href="">YAMV (Yet Another Map Viewer)</a>
 				</section>
 
 				<section class="left">
 					<h1>Thanks!</h1>
-					<p>Twitter : <a href="http://twitter.com/patrickarlt">@patrickarlt</a></p>
-					<p>Slides : <a href="http://patrickarlt.github.io/uc-2014-angular-js/">http://bit.ly/1vOkpoK</a></p>
+					<p>Twitter: <a href="http://twitter.com/patrickarlt">@patrickarlt</a></p>
+					<p>Slides: <a href="http://patrickarlt.github.io/uc-2014-angular-js/">http://bit.ly/1vOkpoK</a></p>
 					<br>
 					<div class="center-text">
 						<img src="esri-logo.png" alt="Esri" width="280" height="118" >
