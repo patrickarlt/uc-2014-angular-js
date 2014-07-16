@@ -1,5 +1,5 @@
 <h1>{{title}}</h1>
-<p>{{description}}</p>
+<p ng-bind-html='description'></p>
 <p><a href="http://www.arcgis.com/home/item.html?id={{itemId}}">View In ArcGIS Online</a></p>
 
 <esri-map id="map" basemap="gray" extent="extent">

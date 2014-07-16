@@ -4,7 +4,7 @@ require([
 ], function (angular, app) {
 
   function getResults($http, $stateParams){
-    var perpage = 100;
+    var perpage = 10;
     var start = ($stateParams.page === '1') ? 1 : ($stateParams.page * perpage) + 1 - perpage;
     return $http.get('http://www.arcgis.com/sharing/rest/search', {
       params: {

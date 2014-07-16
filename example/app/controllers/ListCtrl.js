@@ -9,7 +9,7 @@ define([
     $scope.items = results.data.results;
     $scope.currentPage = $stateParams.page;
     $scope.totalItems = results.data.total;
-    $scope.itemsPerPage = 100;
+    $scope.itemsPerPage = 10;
 
     $scope.goToPage =  function(page){
       $state.go('search', {

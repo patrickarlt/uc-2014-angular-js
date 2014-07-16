@@ -6,7 +6,7 @@ define([
 ], function (angular, app, Extent, SpatialReference) {
 
   // define our controller and register it with our app
-  app.controller("ContentCtrl", function($scope, item){
+  app.controller("ContentCtrl", function($scope, item, $sce){
     $scope.itemId = item.data.id;
     $scope.title = item.data.title;
     $scope.description = item.data.description;

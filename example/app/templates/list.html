@@ -1,6 +1,6 @@
 <div class="row">
   <section class="columns large-4">
-    <pagination ng-if="items" page='currentPage' total-items='totalItems' items-per-page='itemsPerPage' max-size='7' on-select-page='goToPage(page)'></pagination>
+    <pagination ng-if="items" page='currentPage' total-items='totalItems' items-per-page='itemsPerPage' max-size='9' on-select-page='goToPage(page)'></pagination>
 
     <ul class="large-block-grid-2">
       <li ng-repeat="item in items">
@@ -11,7 +11,7 @@
       </li>
     </ul>
 
-    <pagination ng-if="items" page='currentPage' total-items='totalItems' items-per-page='itemsPerPage' max-size='7' on-select-page='goToPage(page)'></pagination>
+    <pagination ng-if="items" page='currentPage' total-items='totalItems' items-per-page='itemsPerPage' max-size='9' on-select-page='goToPage(page)'></pagination>
   </section>
 
   <section class="columns large-8" ui-view="content"></section>
