@@ -1,0 +1,18 @@
+<div class="row">
+  <section class="columns large-4">
+    <pagination ng-if="items" page='currentPage' total-items='totalItems' items-per-page='itemsPerPage' max-size='7' on-select-page='goToPage(page)'></pagination>
+
+    <ul class="large-block-grid-2">
+      <li ng-repeat="item in items">
+        <a ui-sref="search.item({id: item.id, q: query, page: currentPage})" class="th">
+          <img ng-src="http://www.arcgis.com/sharing/rest/content/items/{{item.id}}/info/{{item.thumbnail}}" alt="{{item.title}}">
+          <h5 class="item-name">{{item.title}}</h2>
+        </a>
+      </li>
+    </ul>
+
+    <pagination ng-if="items" page='currentPage' total-items='totalItems' items-per-page='itemsPerPage' max-size='7' on-select-page='goToPage(page)'></pagination>
+  </section>
+
+  <section class="columns large-8" ui-view="content"></section>
+</div>
