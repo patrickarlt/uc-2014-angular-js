@@ -1,9 +1,8 @@
 define([
-  'angular',
   'app',
   'esri/geometry/Extent',
   'esri/SpatialReference'
-], function (angular, app, Extent, SpatialReference) {
+], function (app, Extent, SpatialReference) {
 
   // define our controller and register it with our app
   app.controller("ContentCtrl", function($scope, item, $sce){

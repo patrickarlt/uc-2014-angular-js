@@ -1,7 +1,6 @@
 define([
-  'angular',
   'app'
-], function (angular, app) {
+], function (app) {
 
   // define our controller and register it with our app
   app.controller("ListCtrl", function($scope, $state, $stateParams, results){
